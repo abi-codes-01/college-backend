@@ -7,6 +7,8 @@ COPY .mvn .mvn
 COPY pom.xml .
 COPY src src
 
+# Grant execution permission to the Maven wrapper
+RUN chmod +x mvnw
 RUN ./mvnw clean package -DskipTests
 
 # Stage 2: Run the application
